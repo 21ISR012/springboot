@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback Form | Bootstrap Example</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h2 class="mb-4">Camping Form</h2>
+  <form th:action="@{/user_save}" th:method="post" th:object="${user}">
+    <div class="mb-3">
+      <label for="uname" class="form-label">Username:</label>
+      <input type="text" class="form-control" id="username" th:field="*{name}" placeholder="Enter username" name="uname" required>
+    </div>
+    <div class="mb-3">
+      <label for="pwd" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="password" th:field="*{password}" placeholder="Enter password" name="pswd" required>
+    </div>
+    <div class="mb-3">
+      <label for="year" class="form-label">Year:</label>
+      <input type="text" class="form-control" id="year" th:field="*{year}" placeholder="Enter year" name="year" required>
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location:</label>
+      <input type="text" class="form-control" id="location" th:field="*{location}" placeholder="Enter location" name="location" required>
+    </div>
+    <div class="mb-3">
+      <label for="hotel" class="form-label">Hotel name:</label>
+      <input type="text" class="form-control" id="hotel" th:field="*{hotel}" placeholder="Enter hotel name" name="hotel" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
